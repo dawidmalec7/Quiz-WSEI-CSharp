@@ -85,5 +85,10 @@ namespace Quiz
                 MessageBox.Show("NICE!");
             }
         }
+
+        private void Button_Question2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
