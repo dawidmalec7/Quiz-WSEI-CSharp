@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DatabaseConnectionAPI;
+
+
 
 namespace Quiz
 {
@@ -14,26 +17,22 @@ namespace Quiz
     //ZMIENNA DO SPRAWDZENIA CZY UZYTKOWNIK PODAL JUZ IMIE // ?
     public partial class Form1 : Form
     {
-        Random rnd = new Random();
+
         string[,] tab = new string[1, 6];
         string Name = "";
-
+        int score = 0;
+        Database quizDatabase = new Database();
+        int counterQuestions = 1;
         public Form1()
         {
             InitializeComponent();
-            tab[0, 0] = "Jaki to typ danych: uint?";
-            tab[0, 1] = "1.dodatne liczby";
-            tab[0, 2] = "2.liczby zmienno-przecinkowe";
-            tab[0, 3] = "3.liczby dodatnie i ujemne";
-            tab[0, 4] = "4.liczby ujemne";
-            tab[0, 5] = "1";
-     
+
         }
 
         private void Button_Start_Game_Click(object sender, EventArgs e)
         {
             GroupBox_Question.Show();
-            Graj(tab, rnd);
+            Graj(counterQuestions);
 
         }
 
@@ -64,31 +63,67 @@ namespace Quiz
             Button_Quit.Enabled = true;
         }
 
-        public void Graj(string[,] tab, Random rnd)
+        public void KoniecGry()
         {
-            int counterQuestions = 1;
+            GroupBox_Question.Hide();
+            MessageBox.Show($"{Name} zdobyłeś {score} punktów", "Koniec Gry", MessageBoxButtons.OK);
+            quizDatabase.AddToLeaderboard(Name, score);
+            counterQuestions = 1;
+        }
+
+        public void Graj(int counterQuestions)
+        {
+            string[] question = quizDatabase.GetQuestion(quizDatabase.GetRandomQuestion());
+            List<Answers> answers = quizDatabase.GetAnswers(question[1]);
+
             GroupBox_Question.Text = "Pytanie " + counterQuestions + ":";
             //POBRAC PYTANIA Z BAZY I JE WYSWIETLIC W PETLI
-            Label_Question.Text = tab[0, 0];
-            Button_Question1.Text = tab[0, 1];
-            Button_Question1.Tag = tab[0, 5];
-            Button_Question2.Text = tab[0, 2];
-            Button_Question3.Text = tab[0, 3];
-            Button_Question4.Text = tab[0, 4];
 
+            Label_Question.Text = question[0];
+            Button_Question1.Text = answers[0].answer;
+            Button_Question2.Text = answers[1].answer;
+            Button_Question3.Text = answers[2].answer;
+            Button_Question4.Text = answers[3].answer;
+
+            Button_Question1.Tag = answers[0].correct;
+            Button_Question2.Tag = answers[1].correct;
+            Button_Question3.Tag = answers[2].correct;
+            Button_Question4.Tag = answers[3].correct;
+            if (counterQuestions == 6)
+                KoniecGry();
+
+        }
+
+        public void CheckAnswer(object value)
+        {
+            if (Convert.ToString(value) == "1")
+            {
+                MessageBox.Show("+100 punktów", "Poprawna odpowiedz", MessageBoxButtons.OK);
+                score += 100;
+            }
+            else
+                MessageBox.Show("tym razem nie dostaniesz punktów", "Błędna odpowiedź", MessageBoxButtons.OK);
+            Graj(++counterQuestions);
         }
 
         private void Button_Question1_Click(object sender, EventArgs e)
         {
-            if(Button_Question1.Tag.ToString() == "1")
-            {
-                MessageBox.Show("NICE!");
-            }
+            CheckAnswer(Button_Question1.Tag);
         }
 
         private void Button_Question2_Click(object sender, EventArgs e)
         {
+            CheckAnswer(Button_Question2.Tag);
+        }
 
+        private void Button_Question3_Click(object sender, EventArgs e)
+        {
+            CheckAnswer(Button_Question3.Tag);
+        }
+
+        private void Button_Question4_Click(object sender, EventArgs e)
+        {
+            CheckAnswer(Button_Question4.Tag);
         }
     }
 }
