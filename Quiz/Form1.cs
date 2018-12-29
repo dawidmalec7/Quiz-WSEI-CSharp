@@ -17,6 +17,8 @@ namespace Quiz
     //ZMIENNA DO SPRAWDZENIA CZY UZYTKOWNIK PODAL JUZ IMIE // ?
     public partial class Form1 : Form
     {
+        Form2 secondForm = new Form2(); // RANKING
+        private List<Button> AnswerButtons = new List<Button>(); 
 
         string[,] tab = new string[1, 6];
         private new string Name = "";
@@ -27,7 +29,10 @@ namespace Quiz
         public Form1()
         {
             InitializeComponent();
-
+            AnswerButtons.Add(Button_Question1);
+            AnswerButtons.Add(Button_Question2);
+            AnswerButtons.Add(Button_Question3);
+            AnswerButtons.Add(Button_Question4);
         }
 
         private void Button_Start_Game_Click(object sender, EventArgs e)
@@ -37,14 +42,10 @@ namespace Quiz
 
         }
 
-        private void Button_Questions_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void Button_Ranking_Click(object sender, EventArgs e)
         {
-
+            secondForm.Show();
         }
 
         private void Button_Quit_Click(object sender, EventArgs e)
@@ -60,7 +61,6 @@ namespace Quiz
             GroupBox_Name.Hide();
             Button_Start_Game.Enabled = true;
             Button_Ranking.Enabled = true;
-            Button_Questions.Enabled = true;
             Button_Quit.Enabled = true;
         }
 
@@ -68,7 +68,7 @@ namespace Quiz
         {
             GroupBox_Question.Hide();
             MessageBox.Show($"{Name} zdobyłeś {score} punktów", "Koniec Gry", MessageBoxButtons.OK);
-            quizDatabase.AddToLeaderboard(Name, score);
+            //quizDatabase.AddToLeaderboard(Name, score); -- Zacina gre po zakonczeniu quizu
             counterQuestions = 1;
         }
 
@@ -79,17 +79,16 @@ namespace Quiz
 
             GroupBox_Question.Text = "Pytanie " + counterQuestions + ":";
             //POBRAC PYTANIA Z BAZY I JE WYSWIETLIC W PETLI
-
             Label_Question.Text = question[0];
-            Button_Question1.Text = answers[0].answer;
-            Button_Question2.Text = answers[1].answer;
-            Button_Question3.Text = answers[2].answer;
-            Button_Question4.Text = answers[3].answer;
 
-            Button_Question1.Tag = answers[0].correct;
-            Button_Question2.Tag = answers[1].correct;
-            Button_Question3.Tag = answers[2].correct;
-            Button_Question4.Tag = answers[3].correct;
+            int counterButtons = 1;
+            for(int i = 0; i < 4; i++)
+            {
+                AnswerButtons[i].Text = answers[i].answer;
+                AnswerButtons[i].Tag = answers[i].correct;
+                counterButtons++;
+            }
+   
             if (counterQuestions == 6)
                 KoniecGry();
 
@@ -103,7 +102,9 @@ namespace Quiz
                 score += 100;
             }
             else
+            {
                 MessageBox.Show("tym razem nie dostaniesz punktów", "Błędna odpowiedź", MessageBoxButtons.OK);
+            }
             Graj(++counterQuestions);
         }
 
@@ -116,7 +117,6 @@ namespace Quiz
         {
             CheckAnswer(Button_Question2.Tag);
         }
-
         private void Button_Question3_Click(object sender, EventArgs e)
         {
             CheckAnswer(Button_Question3.Tag);
@@ -125,6 +125,21 @@ namespace Quiz
         private void Button_Question4_Click(object sender, EventArgs e)
         {
             CheckAnswer(Button_Question4.Tag);
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
