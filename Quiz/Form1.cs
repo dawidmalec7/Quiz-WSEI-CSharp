@@ -19,10 +19,11 @@ namespace Quiz
     {
 
         string[,] tab = new string[1, 6];
-        string Name = "";
+        private new string Name = "";
         int score = 0;
         Database quizDatabase = new Database();
         int counterQuestions = 1;
+
         public Form1()
         {
             InitializeComponent();
