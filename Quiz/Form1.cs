@@ -16,7 +16,7 @@ namespace Quiz
     {
         Random rnd = new Random();
         string[,] tab = new string[1, 6];
-        string Name = "";
+        private new string Name = "";
 
         public Form1()
         {
