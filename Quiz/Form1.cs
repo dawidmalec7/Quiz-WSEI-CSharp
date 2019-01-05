@@ -68,7 +68,7 @@ namespace Quiz
         {
             GroupBox_Question.Hide();
             MessageBox.Show($"{Name} zdobyłeś {score} punktów", "Koniec Gry", MessageBoxButtons.OK);
-            //quizDatabase.AddToLeaderboard(Name, score); -- Zacina gre po zakonczeniu quizu
+            quizDatabase.AddToLeaderboard(Name, score);
             counterQuestions = 1;
         }
 
@@ -78,15 +78,12 @@ namespace Quiz
             List<Answers> answers = quizDatabase.GetAnswers(question[1]);
 
             GroupBox_Question.Text = "Pytanie " + counterQuestions + ":";
-            //POBRAC PYTANIA Z BAZY I JE WYSWIETLIC W PETLI
             Label_Question.Text = question[0];
 
-            int counterButtons = 1;
             for(int i = 0; i < 4; i++)
             {
                 AnswerButtons[i].Text = answers[i].answer;
                 AnswerButtons[i].Tag = answers[i].correct;
-                counterButtons++;
             }
    
             if (counterQuestions == 6)

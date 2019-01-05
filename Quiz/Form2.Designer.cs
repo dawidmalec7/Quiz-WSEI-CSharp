@@ -31,36 +31,40 @@
             this.listView1 = new System.Windows.Forms.ListView();
             this.Gracz = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Punkty = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Czas = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Pozycja = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // listView1
             // 
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Pozycja,
             this.Gracz,
-            this.Punkty,
-            this.Czas});
-            this.listView1.Location = new System.Drawing.Point(31, 55);
+            this.Punkty});
+            this.listView1.Location = new System.Drawing.Point(21, 53);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(453, 210);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // Gracz
             // 
+            this.Gracz.DisplayIndex = 0;
             this.Gracz.Text = "Gracz";
-            this.Gracz.Width = 139;
+            this.Gracz.Width = 86;
             // 
             // Punkty
             // 
+            this.Punkty.DisplayIndex = 1;
             this.Punkty.Text = "Punkty";
-            this.Punkty.Width = 126;
+            this.Punkty.Width = 226;
             // 
-            // Czas
+            // Pozycja
             // 
-            this.Czas.Text = "Czas";
-            this.Czas.Width = 178;
+            this.Pozycja.DisplayIndex = 2;
+            this.Pozycja.Text = "Pozycja";
+            this.Pozycja.Width = 161;
             // 
             // Form2
             // 
@@ -80,6 +84,6 @@
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ColumnHeader Gracz;
         private System.Windows.Forms.ColumnHeader Punkty;
-        private System.Windows.Forms.ColumnHeader Czas;
+        private System.Windows.Forms.ColumnHeader Pozycja;
     }
 }
