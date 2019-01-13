@@ -14,7 +14,6 @@ using DatabaseConnectionAPI;
 namespace Quiz
 {
 
-    //ZMIENNA DO SPRAWDZENIA CZY UZYTKOWNIK PODAL JUZ IMIE // ?
     public partial class Form1 : Form
     {
         Form2 secondForm = new Form2(); // RANKING
