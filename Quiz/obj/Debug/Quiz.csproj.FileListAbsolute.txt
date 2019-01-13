@@ -53,3 +53,4 @@ C:\Users\xxx\Desktop\Quiz-WSEI\Quiz-WSEI-CSharp\Quiz\obj\Debug\Quiz.csproj.CopyC
 C:\Users\xxx\Desktop\Quiz-WSEI\Quiz-WSEI-CSharp\Quiz\obj\Debug\Quiz.exe
 C:\Users\xxx\Desktop\Quiz-WSEI\Quiz-WSEI-CSharp\Quiz\obj\Debug\Quiz.pdb
 C:\Users\xxx\Desktop\Quiz-WSEI\Quiz-WSEI-CSharp\Quiz\obj\Debug\Quiz.Form2.resources
+C:\Users\komputer\Desktop\Quiz-WSEI-CSharp\Quiz\obj\Debug\Quiz.Form2.resources

@@ -17,6 +17,13 @@ namespace DatabaseConnectionAPI
         public string answer { get; set; }
 
     }
+    //klasa do przechowywania tablicy wyników
+    public class Leaderboard
+    {
+        public string ID { get; set; }
+        public string nick { get; set; }
+        public string points { get; set; }
+    }
     public class Database
     {
         public SQLiteConnection quizDbConnection;
@@ -96,16 +103,25 @@ namespace DatabaseConnectionAPI
         }
 
         //wyswietla tablice 10 najlepszych wyników 
-        public void DisplayLeaderboard()
+        public List<Leaderboard> DisplayLeaderboard()
         {
             OpenConnection();
             string selectLeaderboard = "select * from Leaderboard ORDER BY Leaderboard.highscore DESC limit 10";
             SQLiteCommand executeLeaderboard = new SQLiteCommand(selectLeaderboard, quizDbConnection);
             SQLiteDataReader leaderboard = executeLeaderboard.ExecuteReader();
-
+            List<Leaderboard> results = new List<Leaderboard>();
             while (leaderboard.Read())
-                Console.WriteLine("#{0}. {1} -- {2}", leaderboard["ID"], leaderboard["nick"], leaderboard["highscore"]);
+            {
+                Leaderboard table = new Leaderboard
+                {
+                    ID = Convert.ToString(leaderboard["ID"]),
+                    nick = Convert.ToString(leaderboard["nick"]),
+                    points = Convert.ToString(leaderboard["highscore"])
+                };
+                results.Add(table);
+            }
             CloseConnection();
+            return results;
         }
 
 
