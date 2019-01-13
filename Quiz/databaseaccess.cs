@@ -34,14 +34,14 @@ namespace DatabaseConnectionAPI
 
         }
         //otwiera połączeniez bazą
-        private void OpenConnection()
+        public void OpenConnection()
         {
             if (quizDbConnection.State != System.Data.ConnectionState.Open)
                 quizDbConnection.Open();
         }
 
         //zamyka połączenie z bazą
-        private void CloseConnection()
+        public void CloseConnection()
         {
             if (quizDbConnection.State != System.Data.ConnectionState.Closed)
                 quizDbConnection.Close();
@@ -128,18 +128,17 @@ namespace DatabaseConnectionAPI
         //dodaje do tabeli wyników
         public void AddToLeaderboard(string nick, string score)
         {
-            OpenConnection();
-            SQLiteCommand cmd = new SQLiteCommand($"INSERT INTO Leaderboard (nick, highscore) VALUES ({nick},{score})", quizDbConnection);
-            try
+           // SQLiteCommand cmd = new SQLiteCommand($"INSERT INTO Leaderboard(nick, highscore) VALUES('nick', 'highscore')", quizDbConnection);
+           // quizDbConnection = new SQLiteConnection(string.Format("Data Source={0}", Path.Combine(Application.StartupPath, "quiz_db.sqlite3")));
+           // quizDbConnection.Open();
+            using (SQLiteConnection c = new SQLiteConnection(string.Format("Data Source={0}", Path.Combine(Application.StartupPath, "quiz_db.sqlite3"))))
             {
-                cmd.ExecuteNonQuery();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-            
-            CloseConnection();
+                c.Open();
+                using (SQLiteCommand cmd = new SQLiteCommand($"INSERT INTO Leaderboard(nick, highscore) VALUES('{nick}', '{score}')", c))
+                {
+                    cmd.ExecuteNonQuery();
+                }
+            } 
         }
     }
 
