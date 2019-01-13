@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.listView1 = new System.Windows.Forms.ListView();
+            this.Pozycja = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Gracz = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Punkty = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Pozycja = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // listView1
@@ -40,7 +40,7 @@
             this.Pozycja,
             this.Gracz,
             this.Punkty});
-            this.listView1.Location = new System.Drawing.Point(21, 53);
+            this.listView1.Location = new System.Drawing.Point(33, 51);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(453, 210);
             this.listView1.TabIndex = 0;
@@ -48,23 +48,19 @@
             this.listView1.View = System.Windows.Forms.View.Details;
             this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
+            // Pozycja
+            // 
+            this.Pozycja.Text = "Pozycja";
+            // 
             // Gracz
             // 
-            this.Gracz.DisplayIndex = 0;
             this.Gracz.Text = "Gracz";
-            this.Gracz.Width = 86;
+            this.Gracz.Width = 182;
             // 
             // Punkty
             // 
-            this.Punkty.DisplayIndex = 1;
             this.Punkty.Text = "Punkty";
-            this.Punkty.Width = 226;
-            // 
-            // Pozycja
-            // 
-            this.Pozycja.DisplayIndex = 2;
-            this.Pozycja.Text = "Pozycja";
-            this.Pozycja.Width = 161;
+            this.Punkty.Width = 195;
             // 
             // Form2
             // 
