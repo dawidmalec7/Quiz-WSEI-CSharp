@@ -68,7 +68,7 @@ namespace Quiz
         {
             GroupBox_Question.Hide();
             MessageBox.Show($"{Name} zdobyłeś {score} punktów", "Koniec Gry", MessageBoxButtons.OK);
-            quizDatabase.AddToLeaderboard(Name, score);
+            quizDatabase.AddToLeaderboard(Name, Convert.ToString(score));
             counterQuestions = 1;
         }
 

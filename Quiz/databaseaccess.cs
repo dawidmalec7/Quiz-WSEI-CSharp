@@ -126,20 +126,19 @@ namespace DatabaseConnectionAPI
 
 
         //dodaje do tabeli wyników
-        public void AddToLeaderboard(string nick, int score)
+        public void AddToLeaderboard(string nick, string score)
         {
             OpenConnection();
-            string insertToLeaderboard = String.Format("insert into Leaderboard (`nick`, `highscore`) VALUES ('{0}', '{1}')", nick, score);
-            SQLiteCommand addToLeaderboard = new SQLiteCommand(insertToLeaderboard, quizDbConnection);
+            SQLiteCommand cmd = new SQLiteCommand($"INSERT INTO Leaderboard (nick, highscore) VALUES ({nick},{score})", quizDbConnection);
             try
             {
-                addToLeaderboard.ExecuteNonQuery();
+                cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
-
+            
             CloseConnection();
         }
     }
