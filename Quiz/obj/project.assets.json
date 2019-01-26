@@ -501,11 +501,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\xxx\\Desktop\\Quiz-WSEI\\Quiz-WSEI-CSharp\\Quiz\\Quiz.csproj",
+      "projectUniqueName": "C:\\Users\\xxx\\Desktop\\Quiz-WSEI-CSharp\\Quiz\\Quiz.csproj",
       "projectName": "Quiz",
-      "projectPath": "C:\\Users\\xxx\\Desktop\\Quiz-WSEI\\Quiz-WSEI-CSharp\\Quiz\\Quiz.csproj",
+      "projectPath": "C:\\Users\\xxx\\Desktop\\Quiz-WSEI-CSharp\\Quiz\\Quiz.csproj",
       "packagesPath": "C:\\Users\\xxx\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\xxx\\Desktop\\Quiz-WSEI\\Quiz-WSEI-CSharp\\Quiz\\obj\\",
+      "outputPath": "C:\\Users\\xxx\\Desktop\\Quiz-WSEI-CSharp\\Quiz\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
