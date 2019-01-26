@@ -111,7 +111,7 @@
             this.Button_Question4.TabIndex = 4;
             this.Button_Question4.Text = "button1";
             this.Button_Question4.UseVisualStyleBackColor = true;
-            this.Button_Question4.Click += new System.EventHandler(this.Button_Question_Click);
+            this.Button_Question4.Click += new System.EventHandler(this.Button_Question4_Click);
             // 
             // Button_Question3
             // 
@@ -121,7 +121,7 @@
             this.Button_Question3.TabIndex = 3;
             this.Button_Question3.Text = "button1";
             this.Button_Question3.UseVisualStyleBackColor = true;
-            this.Button_Question3.Click += new System.EventHandler(this.Button_Question_Click);
+            this.Button_Question3.Click += new System.EventHandler(this.Button_Question3_Click);
             // 
             // Button_Question2
             // 
@@ -131,7 +131,7 @@
             this.Button_Question2.TabIndex = 2;
             this.Button_Question2.Text = "button1";
             this.Button_Question2.UseVisualStyleBackColor = true;
-            this.Button_Question2.Click += new System.EventHandler(this.Button_Question_Click);
+            this.Button_Question2.Click += new System.EventHandler(this.Button_Question2_Click);
             // 
             // Button_Question1
             // 
@@ -141,7 +141,7 @@
             this.Button_Question1.TabIndex = 1;
             this.Button_Question1.Text = "button1";
             this.Button_Question1.UseVisualStyleBackColor = true;
-            this.Button_Question1.Click += new System.EventHandler(this.Button_Question_Click);
+            this.Button_Question1.Click += new System.EventHandler(this.Button_Question1_Click);
             // 
             // Label_Question
             // 

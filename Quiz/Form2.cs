@@ -14,7 +14,7 @@ namespace Quiz
     public partial class Form2 : Form
     {
         Database leaderboard = new Database();
-        private bool addedRanking = false;
+        bool addedRanking = false;
         public Form2()
         {
             InitializeComponent();
@@ -33,6 +33,11 @@ namespace Quiz
                 }
                 addedRanking = true;
             }
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }
