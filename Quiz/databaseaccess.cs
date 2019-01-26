@@ -138,6 +138,7 @@ namespace DatabaseConnectionAPI
                 {
                     cmd.ExecuteNonQuery();
                 }
+                c.Close();
             } 
         }
     }
