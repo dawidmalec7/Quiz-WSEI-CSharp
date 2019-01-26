@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Data.SQLite;
 using System.IO;
 using System.Windows.Forms;
-
+using System.Data;
 
 namespace DatabaseConnectionAPI
 {
@@ -36,14 +36,14 @@ namespace DatabaseConnectionAPI
         //otwiera połączeniez bazą
         private void OpenConnection()
         {
-            if (quizDbConnection.State != System.Data.ConnectionState.Open)
+            if (quizDbConnection.State != ConnectionState.Open)
                 quizDbConnection.Open();
         }
 
         //zamyka połączenie z bazą
         private void CloseConnection()
         {
-            if (quizDbConnection.State != System.Data.ConnectionState.Closed)
+            if (quizDbConnection.State != ConnectionState.Closed)
                 quizDbConnection.Close();
         }
 
@@ -133,7 +133,7 @@ namespace DatabaseConnectionAPI
                 c.Open();
                 using (SQLiteCommand cmd = new SQLiteCommand($"INSERT INTO Leaderboard(nick, highscore) VALUES('{nick}', '{score}')", c))
                 {
-                    cmd.ExecuteNonQuery();
+                    cmd.ExecuteScalar();
                 }
                 c.Close();
             } 

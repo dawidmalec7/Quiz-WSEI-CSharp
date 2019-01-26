@@ -67,6 +67,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Quiz.cs" />
     <Compile Include="databaseaccess.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
