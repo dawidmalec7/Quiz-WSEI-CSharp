@@ -31,7 +31,7 @@ namespace DatabaseConnectionAPI
         public Database()
         {
             quizDbConnection = new SQLiteConnection(string.Format("Data Source={0}", Path.Combine(Application.StartupPath, "quiz_db.sqlite3")));
-
+            quizDbConnection.Open();
         }
         //otwiera połączeniez bazą
         public void OpenConnection()
@@ -50,13 +50,13 @@ namespace DatabaseConnectionAPI
         //pobiera losową wartość ID pytania
         public int GetRandomQuestion()
         {
-            OpenConnection();
+           // OpenConnection();
             string countQuestions = "SELECT count(question) as number FROM Questions";
             SQLiteCommand executeCount = new SQLiteCommand(countQuestions, quizDbConnection);
             var max_value = executeCount.ExecuteScalar();
             Random r = new Random();
             int numberOfQuestion = r.Next(1, Convert.ToInt32(max_value));
-            CloseConnection();
+           // CloseConnection();
             return numberOfQuestion;
         }
 
@@ -65,7 +65,7 @@ namespace DatabaseConnectionAPI
         // zwraca tablice w której 1 elementem jest treść pytania a 2 jego id
         public string[] GetQuestion(int ID)
         {
-            OpenConnection();
+           // OpenConnection();
             string selectQuestion = String.Format("select Questions.question, ID from Questions where ID ={0} ", ID);
             SQLiteCommand executeQuestion = new SQLiteCommand(selectQuestion, quizDbConnection);
             var question = executeQuestion.ExecuteReader();
@@ -76,7 +76,7 @@ namespace DatabaseConnectionAPI
             string[] tab = new string[2];
             tab[0] = Convert.ToString(question["question"]);
             tab[1] = Convert.ToString(question["ID"]);
-            CloseConnection();
+          //  CloseConnection();
             return tab;
         }
 
@@ -84,7 +84,7 @@ namespace DatabaseConnectionAPI
         public List<Answers> GetAnswers(string question_ID)
         {
             Convert.ToUInt16(question_ID);
-            OpenConnection();
+           // OpenConnection();
             string selectAnswer = String.Format("select Answers.answer, Answers.correct from Answers where question_ID ={0} ", question_ID);
             SQLiteCommand executeAnswer = new SQLiteCommand(selectAnswer, quizDbConnection);
             SQLiteDataReader answers = executeAnswer.ExecuteReader();
@@ -98,14 +98,14 @@ namespace DatabaseConnectionAPI
                 };
                 answers_list.Add(answer);
             }
-            CloseConnection();
+           // CloseConnection();
             return answers_list;
         }
 
         //wyswietla tablice 10 najlepszych wyników 
         public List<Leaderboard> DisplayLeaderboard()
         {
-            OpenConnection();
+           // OpenConnection();
             string selectLeaderboard = "select * from Leaderboard ORDER BY Leaderboard.highscore DESC limit 10";
             SQLiteCommand executeLeaderboard = new SQLiteCommand(selectLeaderboard, quizDbConnection);
             SQLiteDataReader leaderboard = executeLeaderboard.ExecuteReader();
@@ -120,7 +120,7 @@ namespace DatabaseConnectionAPI
                 };
                 results.Add(table);
             }
-            CloseConnection();
+           // CloseConnection();
             return results;
         }
 
@@ -128,17 +128,25 @@ namespace DatabaseConnectionAPI
         //dodaje do tabeli wyników
         public void AddToLeaderboard(string nick, string score)
         {
-           // SQLiteCommand cmd = new SQLiteCommand($"INSERT INTO Leaderboard(nick, highscore) VALUES('nick', 'highscore')", quizDbConnection);
-           // quizDbConnection = new SQLiteConnection(string.Format("Data Source={0}", Path.Combine(Application.StartupPath, "quiz_db.sqlite3")));
-           // quizDbConnection.Open();
-            using (SQLiteConnection c = new SQLiteConnection(string.Format("Data Source={0}", Path.Combine(Application.StartupPath, "quiz_db.sqlite3"))))
+            //OpenConnection();
+            SQLiteCommand cmd = new SQLiteCommand($"INSERT INTO Leaderboard(nick, highscore) VALUES('{nick}', '{score}')", quizDbConnection);
+            try
             {
-                c.Open();
-                using (SQLiteCommand cmd = new SQLiteCommand($"INSERT INTO Leaderboard(nick, highscore) VALUES('{nick}', '{score}')", c))
-                {
-                    cmd.ExecuteNonQuery();
-                }
-            } 
+                cmd.ExecuteNonQuery();
+            }
+            catch (SQLiteException sqle)
+            {
+                MessageBox.Show("Database error: " + sqle.Message);
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Database error: " + e.Message);
+            }
+            finally
+            {
+              CloseConnection();
+            }
         }
     }
 

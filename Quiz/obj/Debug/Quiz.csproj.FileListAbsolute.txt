@@ -75,3 +75,13 @@ C:\Users\xxx\Desktop\old\Quiz-WSEI-CSharp\Quiz\obj\Debug\Quiz.csproj.GenerateRes
 C:\Users\xxx\Desktop\old\Quiz-WSEI-CSharp\Quiz\obj\Debug\Quiz.csproj.CoreCompileInputs.cache
 C:\Users\xxx\Desktop\old\Quiz-WSEI-CSharp\Quiz\obj\Debug\Quiz.exe
 C:\Users\xxx\Desktop\old\Quiz-WSEI-CSharp\Quiz\obj\Debug\Quiz.pdb
+C:\Users\xxx\Desktop\old\Quiz-WSEI-CSharp\Quiz\bin\Debug\Quiz.exe.config
+C:\Users\xxx\Desktop\old\Quiz-WSEI-CSharp\Quiz\bin\Debug\Quiz.exe
+C:\Users\xxx\Desktop\old\Quiz-WSEI-CSharp\Quiz\bin\Debug\Quiz.pdb
+C:\Users\xxx\Desktop\old\Quiz-WSEI-CSharp\Quiz\bin\Debug\Dapper.dll
+C:\Users\xxx\Desktop\old\Quiz-WSEI-CSharp\Quiz\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\xxx\Desktop\old\Quiz-WSEI-CSharp\Quiz\bin\Debug\EntityFramework.dll
+C:\Users\xxx\Desktop\old\Quiz-WSEI-CSharp\Quiz\bin\Debug\System.Data.SQLite.dll
+C:\Users\xxx\Desktop\old\Quiz-WSEI-CSharp\Quiz\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\xxx\Desktop\old\Quiz-WSEI-CSharp\Quiz\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\xxx\Desktop\old\Quiz-WSEI-CSharp\Quiz\obj\Debug\Quiz.csproj.CopyComplete
