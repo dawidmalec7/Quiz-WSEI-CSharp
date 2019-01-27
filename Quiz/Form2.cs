@@ -14,7 +14,6 @@ namespace Quiz
     public partial class Form2 : Form
     {
         Database leaderboard = new Database();
-        bool addedRanking = false;
         public Form2()
         {
             InitializeComponent();
@@ -23,15 +22,12 @@ namespace Quiz
         private void Form2_Load(object sender, EventArgs e)
         {
             List<Leaderboard> tableOfResults = leaderboard.DisplayLeaderboard();
-            if (!addedRanking)
-            {
-                for (int i = 0, position = 1; i < tableOfResults.Count; i++, position++)
-                {
-                    string[] row = { position.ToString(), tableOfResults[i].nick, tableOfResults[i].points };
-                    var ListViewItem = new ListViewItem(row);
-                    listView1.Items.Add(ListViewItem);
-                }
-                addedRanking = true;
+
+            for(int i = 0, position = 1; i<tableOfResults.Count; i++, position++)
+            {   
+                string[] row = { position.ToString(), tableOfResults[i].nick, tableOfResults[i].points };
+                var ListViewItem = new ListViewItem(row);
+                listView1.Items.Add(ListViewItem);
             }
         }
 

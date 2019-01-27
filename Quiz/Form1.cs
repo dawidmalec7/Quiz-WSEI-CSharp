@@ -44,9 +44,7 @@ namespace Quiz
 
         private void Button_Ranking_Click(object sender, EventArgs e)
         {
-            secondForm.ShowDialog();
-            if(secondForm.IsDisposed)
-                secondForm.Dispose();
+            secondForm.Show();
         }
 
         private void Button_Quit_Click(object sender, EventArgs e)
@@ -69,7 +67,9 @@ namespace Quiz
         {
             GroupBox_Question.Hide();
             MessageBox.Show($"{Name} zdobyłeś {score} punktów", "Koniec Gry", MessageBoxButtons.OK);
+            quizDatabase.OpenConnection();
             quizDatabase.AddToLeaderboard(Name, Convert.ToString(score));
+            quizDatabase.CloseConnection();
             counterQuestions = 1;
         }
 

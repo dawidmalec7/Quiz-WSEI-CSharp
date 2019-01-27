@@ -67,3 +67,11 @@ C:\Users\xxx\Desktop\Quiz-WSEI-CSharp\Quiz\obj\Debug\Quiz.csproj.CoreCompileInpu
 C:\Users\xxx\Desktop\Quiz-WSEI-CSharp\Quiz\obj\Debug\Quiz.csproj.CopyComplete
 C:\Users\xxx\Desktop\Quiz-WSEI-CSharp\Quiz\obj\Debug\Quiz.exe
 C:\Users\xxx\Desktop\Quiz-WSEI-CSharp\Quiz\obj\Debug\Quiz.pdb
+C:\Users\xxx\Desktop\old\Quiz-WSEI-CSharp\Quiz\obj\Debug\Quiz.csprojAssemblyReference.cache
+C:\Users\xxx\Desktop\old\Quiz-WSEI-CSharp\Quiz\obj\Debug\Quiz.Form1.resources
+C:\Users\xxx\Desktop\old\Quiz-WSEI-CSharp\Quiz\obj\Debug\Quiz.Form2.resources
+C:\Users\xxx\Desktop\old\Quiz-WSEI-CSharp\Quiz\obj\Debug\Quiz.Properties.Resources.resources
+C:\Users\xxx\Desktop\old\Quiz-WSEI-CSharp\Quiz\obj\Debug\Quiz.csproj.GenerateResource.cache
+C:\Users\xxx\Desktop\old\Quiz-WSEI-CSharp\Quiz\obj\Debug\Quiz.csproj.CoreCompileInputs.cache
+C:\Users\xxx\Desktop\old\Quiz-WSEI-CSharp\Quiz\obj\Debug\Quiz.exe
+C:\Users\xxx\Desktop\old\Quiz-WSEI-CSharp\Quiz\obj\Debug\Quiz.pdb
