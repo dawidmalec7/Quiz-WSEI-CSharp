@@ -17,11 +17,6 @@ C:\Users\komputer\Desktop\Quiz-WSEI-CSharp\Quiz\bin\Debug\EntityFramework.SqlSer
 C:\Users\komputer\Desktop\Quiz-WSEI-CSharp\Quiz\bin\Debug\System.Data.SQLite.dll
 C:\Users\komputer\Desktop\Quiz-WSEI-CSharp\Quiz\bin\Debug\System.Data.SQLite.EF6.dll
 C:\Users\komputer\Desktop\Quiz-WSEI-CSharp\Quiz\bin\Debug\System.Data.SQLite.Linq.dll
-C:\Users\komputer\Desktop\Quiz-WSEI-CSharp\Quiz\bin\Debug\Dapper.xml
-C:\Users\komputer\Desktop\Quiz-WSEI-CSharp\Quiz\bin\Debug\EntityFramework.xml
-C:\Users\komputer\Desktop\Quiz-WSEI-CSharp\Quiz\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\komputer\Desktop\Quiz-WSEI-CSharp\Quiz\bin\Debug\System.Data.SQLite.xml
-C:\Users\komputer\Desktop\Quiz-WSEI-CSharp\Quiz\bin\Debug\System.Data.SQLite.dll.config
 C:\Users\komputer\Desktop\Quiz-WSEI-CSharp\Quiz\obj\Debug\Quiz.csprojAssemblyReference.cache
 C:\Users\komputer\Desktop\Quiz-WSEI-CSharp\Quiz\obj\Debug\Quiz.Form1.resources
 C:\Users\komputer\Desktop\Quiz-WSEI-CSharp\Quiz\obj\Debug\Quiz.Properties.Resources.resources
