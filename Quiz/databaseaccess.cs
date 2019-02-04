@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data.SQLite;
 using System.IO;
 using System.Windows.Forms;
@@ -30,8 +27,7 @@ namespace DatabaseConnectionAPI
         //konstruktor łączy się z bazą
         public Database()
         {
-            string projectDir = Directory.GetParent(Environment.CurrentDirectory).Parent.FullName;
-            string relativePath = Path.Combine(projectDir, @"database/quiz_db.sqlite3");
+            string relativePath = Path.Combine(Application.StartupPath, "quiz_db.sqlite3");
             
             string connectionString = string.Format("Data Source={0}", relativePath);
             quizDbConnection = new SQLiteConnection(connectionString);

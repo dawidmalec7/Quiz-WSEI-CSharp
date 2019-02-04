@@ -32,6 +32,36 @@
           "lib/net45/EntityFramework.dll": {}
         }
       },
+      "SQLite/3.13.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard1.0/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/_._": {}
+        },
+        "build": {
+          "build/net45/SQLite.props": {}
+        },
+        "runtimeTargets": {
+          "runtimes/linux-x64/native/libsqlite3.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/osx-x64/native/libsqlite3.dylib": {
+            "assetType": "native",
+            "rid": "osx-x64"
+          },
+          "runtimes/win7-x64/native/sqlite3.dll": {
+            "assetType": "native",
+            "rid": "win7-x64"
+          },
+          "runtimes/win7-x86/native/sqlite3.dll": {
+            "assetType": "native",
+            "rid": "win7-x86"
+          }
+        }
+      },
       "System.Data.SQLite/1.0.109.2": {
         "type": "package",
         "dependencies": {
@@ -123,6 +153,18 @@
           "lib/net45/EntityFramework.dll": {}
         }
       },
+      "SQLite/3.13.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard1.0/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/_._": {}
+        },
+        "build": {
+          "build/net45/SQLite.props": {}
+        }
+      },
       "System.Data.SQLite/1.0.109.2": {
         "type": "package",
         "dependencies": {
@@ -194,6 +236,18 @@
         "runtime": {
           "lib/net45/EntityFramework.SqlServer.dll": {},
           "lib/net45/EntityFramework.dll": {}
+        }
+      },
+      "SQLite/3.13.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard1.0/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/_._": {}
+        },
+        "build": {
+          "build/net45/SQLite.props": {}
         }
       },
       "System.Data.SQLite/1.0.109.2": {
@@ -272,6 +326,18 @@
           "lib/net45/EntityFramework.dll": {}
         }
       },
+      "SQLite/3.13.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard1.0/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/_._": {}
+        },
+        "build": {
+          "build/net45/SQLite.props": {}
+        }
+      },
       "System.Data.SQLite/1.0.109.2": {
         "type": "package",
         "dependencies": {
@@ -320,7 +386,7 @@
   },
   "libraries": {
     "Dapper/1.50.5": {
-      "sha512": "1vPpX7WQmQCIb7rwlGOUoVs/yWZhVKvdhuG7WrJV+V+qsP8btnrrCqVWHENAlJxBAnUw5rhWfmuba9/Egei9MA==",
+      "sha512": "AzAdZ9fEzUtav3Sbc5CMgz5O2oYkc5g1r+g1h/Vn+wqcInII+xtNEfyZryeW90Wq72bxjEBJhe18j+2SrGrc5A==",
       "type": "package",
       "path": "dapper/1.50.5",
       "files": [
@@ -337,7 +403,7 @@
       ]
     },
     "EntityFramework/6.2.0": {
-      "sha512": "ptGyXOf26qLrtn+2doAmylIlCxOnBJANwlyyLrXDmqIk9O18IzLWHyxDwwAyhgXkxmbiaA0WNpRy67WRReInBw==",
+      "sha512": "+aB/cnEAr9KqVMjmZwu+Fzy3EOPjCIzNsPAUyn19WbB2u3LFHd2OB3X56ohAj7EBf2hppl9M27nlRnkQxOhoAA==",
       "type": "package",
       "path": "entityframework/6.2.0",
       "hasTools": true,
@@ -366,8 +432,29 @@
         "tools/migrate.exe"
       ]
     },
+    "SQLite/3.13.0": {
+      "sha512": "JoDKeLyGRikRMiPaGTdLlV/HMcLfIrYXzgbAaREysfzvgTXgugymq+Te1bAqBNAb7lH1Uk6XLmM9/U+kHWFRnw==",
+      "type": "package",
+      "path": "sqlite/3.13.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/net45/SQLite.props",
+        "lib/netstandard1.0/_._",
+        "runtimes/linux-x64/native/libsqlite3.so",
+        "runtimes/osx-x64/native/libsqlite3.dylib",
+        "runtimes/win10-arm/nativeassets/uap10.0/sqlite3.dll",
+        "runtimes/win10-x64/nativeassets/uap10.0/sqlite3.dll",
+        "runtimes/win10-x86/nativeassets/uap10.0/sqlite3.dll",
+        "runtimes/win7-x64/native/sqlite3.dll",
+        "runtimes/win7-x86/native/sqlite3.dll",
+        "sqlite-version.txt",
+        "sqlite.3.13.0.nupkg.sha512",
+        "sqlite.nuspec"
+      ]
+    },
     "System.Data.SQLite/1.0.109.2": {
-      "sha512": "AG6LubzALAEpp+pN36q2X9hGKHb7sGOUy6HjACDGZ1UVgmr7RKPgsAxlOdAidgvDr5fS3JumyEWRcI0zwOK+SQ==",
+      "sha512": "dsN3a0THLGDu1QDHGdhETU9rgr1tU0IOwnnOQHTR2huXU6HS/o/Nbq1Bol6jrLM3GqQrdNjPxVPZUPaYDRhT4Q==",
       "type": "package",
       "path": "system.data.sqlite/1.0.109.2",
       "files": [
@@ -378,7 +465,7 @@
       ]
     },
     "System.Data.SQLite.Core/1.0.109.2": {
-      "sha512": "c/81hTKf3iOR38329an1Ol0CB89t+MpL/J9Btz1WaZ/64hBXKmzFWV/qfclNtZmZoErgq6XcW9XgKpFnHqfhAg==",
+      "sha512": "eZuKsu2eriGsxsAAlVslcA4ylLnFmfpA3iWeUyU82RNz4yDYlwLAA/zkbxejCEO+GdTd0zSBN4kDHneM39PEsg==",
       "type": "package",
       "path": "system.data.sqlite.core/1.0.109.2",
       "files": [
@@ -426,7 +513,7 @@
       ]
     },
     "System.Data.SQLite.EF6/1.0.109": {
-      "sha512": "QDfseEhtGzlrNe2i8vzypO9RhS2wuVqnL7ZprTUrr4uTJa+Fpev7XhnUfiRTAeumKKNZEcKQ9QujX5+WZ0GeZw==",
+      "sha512": "1DbR0GQkbhEzr59vGaMBSbwSQeB8+iQnEbujRz6GIvawp9VBZjXLaUfDPjHEQTs9rwhJAYRZgT9j2ObM6OPE6g==",
       "type": "package",
       "path": "system.data.sqlite.ef6/1.0.109",
       "hasTools": true,
@@ -462,7 +549,7 @@
       ]
     },
     "System.Data.SQLite.Linq/1.0.109": {
-      "sha512": "PrLjNk8Pz7dpob+33m7w5nl4RMAajfsI9+tQwa4yenLKGFlGPDkDd/4u/zxpqG3jOO/WIfnsflIhBZ0cVPCFWQ==",
+      "sha512": "bGGAKuKmsDgCnMJG3OouR/p2O3gWtaJeU7aICOqx7IlSqZz+GXuY+K3z9EEK9FL7Rr/jode4aCqpCcYBeLxerw==",
       "type": "package",
       "path": "system.data.sqlite.linq/1.0.109",
       "files": [
@@ -491,32 +578,33 @@
   "projectFileDependencyGroups": {
     ".NETFramework,Version=v4.6.1": [
       "Dapper >= 1.50.5",
+      "SQLite >= 3.13.0",
       "System.Data.SQLite >= 1.0.109.2",
       "System.Data.SQLite.Core >= 1.0.109.2"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\xxx\\.nuget\\packages\\": {}
+    "C:\\Users\\komputer\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\xxx\\Desktop\\test\\Quiz-WSEI-CSharp\\Quiz\\Quiz.csproj",
+      "projectUniqueName": "C:\\Users\\komputer\\Desktop\\c#\\Quiz-WSEI-CSharp\\Quiz\\Quiz.csproj",
       "projectName": "Quiz",
-      "projectPath": "C:\\Users\\xxx\\Desktop\\test\\Quiz-WSEI-CSharp\\Quiz\\Quiz.csproj",
-      "packagesPath": "C:\\Users\\xxx\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\xxx\\Desktop\\test\\Quiz-WSEI-CSharp\\Quiz\\obj\\",
+      "projectPath": "C:\\Users\\komputer\\Desktop\\c#\\Quiz-WSEI-CSharp\\Quiz\\Quiz.csproj",
+      "packagesPath": "C:\\Users\\komputer\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\komputer\\Desktop\\c#\\Quiz-WSEI-CSharp\\Quiz\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
-        "C:\\Users\\xxx\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\komputer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net461"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -531,6 +619,10 @@
           "Dapper": {
             "target": "Package",
             "version": "[1.50.5, )"
+          },
+          "SQLite": {
+            "target": "Package",
+            "version": "[3.13.0, )"
           },
           "System.Data.SQLite": {
             "target": "Package",
