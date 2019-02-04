@@ -496,27 +496,27 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\komputer\\.nuget\\packages\\": {}
+    "C:\\Users\\xxx\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\komputer\\Desktop\\Quiz-WSEI-CSharp\\Quiz\\Quiz.csproj",
+      "projectUniqueName": "C:\\Users\\xxx\\Desktop\\Quiz-WSEI-CSharp\\Quiz\\Quiz.csproj",
       "projectName": "Quiz",
-      "projectPath": "C:\\Users\\komputer\\Desktop\\Quiz-WSEI-CSharp\\Quiz\\Quiz.csproj",
-      "packagesPath": "C:\\Users\\komputer\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\komputer\\Desktop\\Quiz-WSEI-CSharp\\Quiz\\obj\\",
+      "projectPath": "C:\\Users\\xxx\\Desktop\\Quiz-WSEI-CSharp\\Quiz\\Quiz.csproj",
+      "packagesPath": "C:\\Users\\xxx\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\xxx\\Desktop\\Quiz-WSEI-CSharp\\Quiz\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
-        "C:\\Users\\komputer\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\xxx\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net461"
       ],
       "sources": {
-        "C:\\Program Files\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
