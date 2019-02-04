@@ -38,7 +38,7 @@ Odpowiedzialny jest za ranking.<br>
 **Metody**:
 - Form2_Load – odpowiedzialny za załadowanie z bazy rankingu do obiektu ListView.
 
-####Baza
+### Baza
  Do projektu jest podpięta baza danych typu SQLite, która dostarcza pytania do aplikacji, jak i również przechowuje wyniki graczy w celu wyświetlenia ich w rankingu. Baza posiada 3 tabele:
 - Answers
 - Questions
