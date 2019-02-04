@@ -16,12 +16,12 @@ Odpowiedzialny jest za :
 - Pobranie nazwy gracza
 - Wyświetlenie menu
 - Pokazanie okna(GroupBox) z grą
-<br>
+
 **Pola**:
 - AnswerButtons – przechowuje przyciski odpowiedzi
 - QuizGame – obiekt pozwalający nam rozpocząć gre
 - secondForm – formularz odpowiedzialny za ranking
-<br>
+
 **Metody**:
 - Button_Start_Game_Click – włącz grę
 - Form1 – konstruktor w którym inicjujemy komponent i dodajemy przyciski do listy AnsweButtons
@@ -34,7 +34,7 @@ Odpowiedzialny jest za ranking.<br>
 **Pola**:
 - Leaderboard – obiekt klasy połączenia z baza danych
 - addedRank – zmienna sprawdza czy ranking został już dodany
-<br>
+
 **Metody**:
 - Form2_Load – odpowiedzialny za załadowanie z bazy rankingu do obiektu ListView.
 
@@ -43,7 +43,7 @@ Odpowiedzialny jest za ranking.<br>
 - Answers
 - Questions
 - Leaderboard
-<br>
+
 Tabela Questions jest połączona relacją z tabelą Answers jeden do wielu(1..n). Tabela Leaderboard jest niezależna i służy tylko do przechowywania rankingu graczy.
 Schemat bazy przedstawiony jest na rysunku pod tym [linkiem](https://imgur.com/a/5Wqv5GO)
 
@@ -64,7 +64,7 @@ Zawiera ona prywatne **pola** takie jak:
 - Score – punkty gracza
 - counterQuestions – licznik pytan
 - quizDatabase – obiekt klasy bazy, który umożliwi nam łączenie się z naszą bazą.
-<br>
+
 **Opis metod**:
 - getName, setName -umożliwia pobranie i ustawienie nazwy gracza
 - setAnswers – umieszcza pytania w przyciskach w formularzu 1
