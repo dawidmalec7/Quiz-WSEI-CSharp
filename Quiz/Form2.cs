@@ -32,6 +32,7 @@ namespace Quiz
                     var ListViewItem = new ListViewItem(row);
                     listView1.Items.Add(ListViewItem);
                 }
+                addedRank = true;
             }
         }
 
