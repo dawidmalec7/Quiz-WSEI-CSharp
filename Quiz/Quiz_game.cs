@@ -9,22 +9,37 @@ using DatabaseConnectionAPI;
 
 namespace QuizGameAPI
 {
+    /// <summary>
+    /// klasa zawierająca logikę gry
+    /// </summary>
     public class QuizGame
     {
         private string Name;
         private int score = 0;
         private int counterQuestions = 1;
         private Database quizDatabase = new Database();
-
+        /// <summary>
+        /// pobiera nazwe gracza
+        /// </summary>
+        /// <returns></returns>
         public string getName()
         {
             return Name;
         }
+        /// <summary>
+        /// zapisuje nazwe gracza
+        /// </summary>
+        /// <param name="Name"></param>
         public void setName(string Name)
         {
             this.Name = Name;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="AllQuestion"></param>
+        /// <param name="Question"></param>
+        /// <param name="AnswerButtons"></param>
         public void Play(GroupBox AllQuestion, Label Question, List<Button> AnswerButtons)
         {
             quizDatabase.OpenConnection();
@@ -41,7 +56,11 @@ namespace QuizGameAPI
                 KoniecGry(AllQuestion);
             }
         }
-
+        /// <summary>
+        /// pobiera odpowiedzi i przypisuje je do przycisków
+        /// </summary>
+        /// <param name="answers">lista z odpowiedziami na pytanie</param>
+        /// <param name="AnswerButtons">lista z przyciskami do których zostaną przypisane odpowiedzi</param>
         private void setAnswers(List<Answers> answers, List<Button> AnswerButtons)
         {
             for (int i = 0; i < 4; i++)
@@ -51,7 +70,10 @@ namespace QuizGameAPI
             }
 
         }
-
+        /// <summary>
+        /// kończy grę i wyświetla komunikat z sumą zdobytych punktów
+        /// </summary>
+        /// <param name="Question"></param>
         private void KoniecGry(GroupBox Question)
         {
             Question.Hide();
@@ -59,7 +81,13 @@ namespace QuizGameAPI
             quizDatabase.AddToLeaderboard(this.Name, this.score.ToString());
             counterQuestions = 1;
         }
-
+        /// <summary>
+        /// Sprawdza czy wybrana odpowiedź jest poprawna i wyświetla komunikat o jej poprawności
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="AllQuestion"></param>
+        /// <param name="Question"></param>
+        /// <param name="AnswerButtons"></param>
         public void CheckAnswer(object value, GroupBox AllQuestion, Label Question, List<Button> AnswerButtons)
         {
             if (Convert.ToString(value) == "1")
